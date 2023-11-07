@@ -1,13 +1,16 @@
-#]# Use an official GCC image as the base image
+# Use an official GCC image as the base image
 FROM gcc
 
+# Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy the current directory contents into the container
-COPY . .
+# Copy the source code and Makefile into the container
+COPY hello_world.c .
+COPY makefile /usr/src/app/
 
-# Build the application using make
-RUN make -f makefile
+# Compile the application using make
+RUN make -f makefile  # Using makefile as specified
 
-# Run the application
+# Command to run the application
 CMD ["./hello_world"]
+

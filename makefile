@@ -1,4 +1,4 @@
-CC=gcc   # For C
+CC=gcc
 
 hello_world: hello_world.c
 	$(CC) -o hello_world hello_world.c
