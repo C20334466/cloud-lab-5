@@ -1,17 +1,19 @@
-name: Build
+name: Build C Application
 
 on:
   push:
     branches:
-      - master
+      - master 
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Build
-      run: make -f Makefile
+      - name: Build the application
+        run: |
+          make -f makefile 
