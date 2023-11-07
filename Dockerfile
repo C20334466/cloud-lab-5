@@ -1,4 +1,4 @@
-# Use an official GCC image as the base image
+#]# Use an official GCC image as the base image
 FROM gcc
 
 WORKDIR /usr/src/app
@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Build the application using make
-RUN make
+RUN make -f makefile
 
 # Run the application
 CMD ["./hello_world"]
